@@ -1,0 +1,62 @@
+﻿@model List<ToDoList>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Layout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">To Do</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">To Do List</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            You can perform transactions related to to do from the panel below:
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Content</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">status</th>
+                                    <th scope="col">Delete</th>
+                                    <th scope="col">Update</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@item.Title</td>
+                                        <td>@item.Date</td>
+                                        @if (item.Status == true)
+                                        {
+                                            <td><a href="/ToDoList/ChageToDoListStatusToFalse/@item.ToDoListId" class="btn btn-dark">Not completed</a></td>
+                                        }
+                                        else
+                                        {
+                                            <td><a href="/ToDoList/ChageToDoListStatusToTrue/@item.ToDoListId" class="btn btn-success">Completed</a></td>
+                                        }
+                                        <td><a href="/ToDoList/DeleteToDoList/@item.ToDoListId" class="btn btn-danger">Delete</a></td>
+                                        <td><a href="/ToDoList/UpdateToDoList/@item.ToDoListId" class="btn btn-success">Update</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/ToDoList/CreateToDoList/" class="btn btn-primary">Add a New Task</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
