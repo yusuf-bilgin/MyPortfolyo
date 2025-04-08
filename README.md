@@ -12,11 +12,11 @@ A **dynamic portfolio application** developed with **ASP.NET Core** that include
 
 ## 🧾 Frontend  
 A **Single Page** theme is used, which includes sections such as:  
-- 🔹 Hakkımda  
-- 🔹 Eğitim Hayatım  
-- 🔹 Deneyimlerim  
-- 🔹 Projelerim  
-- 🔹 İletişim Bilgileri  
+ 🔹 Hakkımda  
+ 🔹 Eğitim Hayatım  
+ 🔹 Deneyimlerim  
+ 🔹 Projelerim  
+ 🔹 İletişim Bilgileri  
 
 ---
 
